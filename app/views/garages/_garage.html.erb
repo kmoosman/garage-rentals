@@ -1,0 +1,37 @@
+
+
+  <div style="display: inline-block; width: 150px; height: 150px;  background-color: lightblue; margin: 5px; padding: 5px;">
+    <h4 style="text-align: center"><%= garage.id %> </h4>
+    <p style="background-color: green">Katie M.</p> 
+    <table style="width: 80%; text-align: center"> 
+      <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody style=" text-align: center">
+        <tr style="width: 200px%;">
+          <td><strong>Fri</strong></td>
+          <td><strong>Sat</strong></td>
+          <td><strong>Sun</strong></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">
+          <% if garage.friday == true %> X
+          <%end%>
+          </td>
+          <td style="text-align: center">
+          <% if garage.saturday == true %> X
+          <%end%></td>
+          <td style="text-align: center">
+          <% if garage.sunday == true %> X
+          <%end%></td>
+        </tr>
+    </tbody>
+
+    </table>
+  </div>
+
+  

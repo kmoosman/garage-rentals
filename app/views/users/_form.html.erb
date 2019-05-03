@@ -1,0 +1,22 @@
+<div style="text-align: center; "> 
+  <%= form_for(user) do |f| %>
+    <div class='field' style="margin: 5px; padding 5px">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class='field' style="margin: 5px; padding 5px">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    </br>
+    <div class='field' style="margin: 5px; padding 5px">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class='field' style="margin: 5px; padding 5px">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.submit button_label %>
+  <% end %>
+</div> 
