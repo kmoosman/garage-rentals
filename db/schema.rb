@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_05_02_044336) do
 
   create_table "garages", force: :cascade do |t|
     t.integer "garage_number"
+    t.integer "event_id"
+    t.integer "user_id"
     t.boolean "friday", default: false
     t.boolean "saturday", default: false
     t.boolean "sunday", default: false
