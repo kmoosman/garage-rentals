@@ -1,34 +1,22 @@
-<div class="card" style="width: 200px; margin: 10px; text-align: center">
+<div class="card" style="width: 200px; margin: 20px; text-align: center">
     <h5 class="card-header" style="text-align: center; color: blue;">GP <%= garage.id %></h5>
-      <div class="card-body">
-        <h5 class="card-title"> 
-        <% if garage.user %> 
-            <%= garage.user.first_name %> <%= garage.user.last_name.chars.first %>.
-        <% else %> 
-            Available 
-        <% end %>
-        </h5>
         <p class="card-text">  
-          <table style="width: 100%; "> 
+          <table style="width: 100%; margin-top: 10px"> 
             <thead>
-              <tr>
-                <th colspan="3"></th>
-              </tr>
-            </thead>
-
-            <tbody style="">
-                <tr>
-                  <td><strong>Fri</strong></td>
-                  <td><strong>Sat</strong></td>
-                  <td><strong>Sun</strong></td>
+                 <tr style="display: flex; width: 200px; justify-content: space-around;">
+                  <th><strong>Fri</strong></td>
+                  <th><strong>Sat</strong></td>
+                  <th><strong>Sun</strong></td>
                 </tr>
+            </thead>
+            <tbody>
 
-                <tr>
-                  <td style="">
+                <tr style="display: flex; width: 95%; justify-content: space-around;">
+                  <td>
                   <% if garage.friday == true %> X
                   <%end%>
                   </td>
-                  <td style="">
+                  <td>
                   <% if garage.saturday == true %> X
                   <%end%></td>
                   <td style=" ">
@@ -39,7 +27,14 @@
 
             </table>
         </p>
-         <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-primary">Rent</a>  
+        <h5 class="card-title;" style="color: red"> 
+          <% if garage.user %> 
+             <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary"><%= garage.user.first_name %> <%= garage.user.last_name.chars.first %>.</a>  
+          <% else %> 
+              <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-primary">Rent</a>  
+          <% end %>
+        </h5>
+         
       </div>  
 </div>
 
