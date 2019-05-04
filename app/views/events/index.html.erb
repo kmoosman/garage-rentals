@@ -1,4 +1,4 @@
 <h1 style="text-align: center; margin-top: 20px">Select an event</h1>
 <hr/>
 
-<%= render @events %>
+<div style="display: flex;  align-items: center; background-color: lightgray;justify-content: center; margin: 0px 100px 0px 100px; border: 1px solid gray; height: 300px"><%= select_tag "events", options_from_collection_for_select(@events, "id", "event_name") %><div>
