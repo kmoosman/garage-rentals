@@ -10,3 +10,4 @@ Garage.create(garage_number: "1", friday: false, saturday: true, sunday: false, 
 Garage.create(garage_number: "2", friday: false, saturday: true, sunday: false, created_at: nil, updated_at: nil)
 Event.create(event_name: "First Event #1", date: "01/01/2019", location: "Austin, TX", created_at: nil, updated_at: nil)
 User.create(first_name: "Katie", last_name: "Moosman", email: "moosman.katie@gmail.com", username: "kmoosman", password_digest: nil, created_at: "2019-05-04 03:49:27", updated_at: "2019-05-04 03:49:27")
+
