@@ -1,37 +1,48 @@
+<div class="card" style="width: 200px; margin: 10px; text-align: center">
+    <h5 class="card-header" style="text-align: center; color: blue;">GP <%= garage.id %></h5>
+      <div class="card-body">
+        <h5 class="card-title"> 
+        <% if garage.user %> 
+            <%= garage.user.first_name %> <%= garage.user.last_name.chars.first %>.
+        <% else %> 
+            Available 
+        <% end %>
+        </h5>
+        <p class="card-text">  
+          <table style="width: 100%; "> 
+            <thead>
+              <tr>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
+            <tbody style="">
+                <tr>
+                  <td><strong>Fri</strong></td>
+                  <td><strong>Sat</strong></td>
+                  <td><strong>Sun</strong></td>
+                </tr>
 
-  <div style="display: inline-block; width: 150px; height: 150px;  background-color: lightblue; margin: 5px; padding: 5px;">
-    <h4 style="text-align: center"><%= garage.id %> </h4>
-    <h5 style="background-color: green"><%= garage.user.first_name %> <%= garage.user.last_name.chars.first %>.</h5> 
-    <table style="width: 80%; text-align: center"> 
-      <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+                <tr>
+                  <td style="">
+                  <% if garage.friday == true %> X
+                  <%end%>
+                  </td>
+                  <td style="">
+                  <% if garage.saturday == true %> X
+                  <%end%></td>
+                  <td style=" ">
+                  <% if garage.sunday == true %> X
+                  <%end%></td>
+                </tr>
+              </tbody>
 
-      <tbody style=" text-align: center">
-        <tr style="width: 200px%;">
-          <td><strong>Fri</strong></td>
-          <td><strong>Sat</strong></td>
-          <td><strong>Sun</strong></td>
-        </tr>
+            </table>
+        </p>
+         <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-primary">Rent</a>  
+      </div>  
+</div>
 
-        <tr>
-          <td style="text-align: center">
-          <% if garage.friday == true %> X
-          <%end%>
-          </td>
-          <td style="text-align: center">
-          <% if garage.saturday == true %> X
-          <%end%></td>
-          <td style="text-align: center">
-          <% if garage.sunday == true %> X
-          <%end%></td>
-        </tr>
-    </tbody>
-
-    </table>
-  </div>
+ 
 
   
