@@ -12,3 +12,4 @@ user = User.create(first_name: "Katie", last_name: "Moosman", email: "moosman.ka
 Garage.create(garage_number: "1", friday: false, saturday: true, sunday: false, created_at: nil, updated_at: nil, event: event, user: user)
 
 
+

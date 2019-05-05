@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/garages/rent/:id' => 'garages#rent'
   get '/events/new' => 'events#new'
   get '/events' => 'events#index'
+  resources :events
   
   resources :users, only: [:new, :show, :create, :edit, :update]
   
