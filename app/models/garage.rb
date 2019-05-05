@@ -6,7 +6,7 @@ class Garage < ApplicationRecord
     #  s
 
     def self.list_garages(params)
-        @garages = Garage.all.where(event_id: params[:id])
+        @garages = Garage.all.where(event_id: params[:event_id])
     end
 
 end
