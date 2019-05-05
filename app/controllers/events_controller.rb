@@ -11,11 +11,10 @@ class EventsController < ApplicationController
 
     def create
         event = Event.create(event_params)
-        binding.pry
         for i in 1..10 do
             Garage.create(garage_number: "#{i}", friday: false, saturday: false, sunday: false, event: event, user: nil)
         end
-        binding.pry
+        redirect_to "/events/#{event.id}/garages"
     end
 
     def show

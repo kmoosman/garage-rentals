@@ -10,7 +10,7 @@ class GaragesController < ApplicationController
     end
 
     def index
-        @garages = Garage.all
+        @garages = Garage.all.list_garages(params)
     end
 
 end

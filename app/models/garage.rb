@@ -5,12 +5,8 @@ class Garage < ApplicationRecord
 
     #  s
 
-
-    # def first_row 
-    #     if garage.garage_number >= 2 
-    #          @first_row << garage
-    #     end
-    #     @first_row
-    # end
+    def self.list_garages(params)
+        @garages = Garage.all.where(event_id: params[:id])
+    end
 
 end
