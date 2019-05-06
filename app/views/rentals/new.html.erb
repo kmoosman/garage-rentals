@@ -1,0 +1,34 @@
+<h1 class="header" style="text-align: center; margin: 10px"> Garage Rental</h1>
+<hr/>
+<h2 style="color: blue; text-align: center;"> GP <%= @garage.garage_number %>  </h2> 
+<div class="center_me" style="text-align: center">
+        <section> 
+            <span> Event: </span>
+            <span> <%= @event.event_name %></span>
+        </section>
+         <section> 
+            <span> Date: </span>
+            <span> <%= @event.date %></span>
+        </section>
+    
+    <card class="form">
+
+ 
+
+   <%= form_tag("rentals", method: "post") do %>
+   <ul>
+    <% Rental.rental_days.each do |day| %>
+      <li>
+        <%= check_box_tag 'rental_day[]', day -%>
+        <%= h day -%>
+      </li>
+  <% end %>
+</ul>
+   
+    <%= submit_tag("Rent") %>
+  <% end %>
+ 
+    
+    
+    </card>
+</div>

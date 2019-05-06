@@ -4,9 +4,7 @@ class CreateRentals < ActiveRecord::Migration[5.2]
       t.integer :event_id
       t.integer :garage_id
       t.integer :user_id
-      t.boolean :friday
-      t.boolean :saturday
-      t.boolean :sunday
+      t.string :rental_day
       t.timestamps
     end
   end

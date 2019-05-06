@@ -31,9 +31,7 @@ ActiveRecord::Schema.define(version: 2019_05_06_025303) do
     t.integer "event_id"
     t.integer "garage_id"
     t.integer "user_id"
-    t.boolean "friday"
-    t.boolean "saturday"
-    t.boolean "sunday"
+    t.string "rental_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
