@@ -11,25 +11,14 @@
             </thead>
             <tbody>
 
-                <tr style="display: flex; width: 95%; justify-content: space-around;">
-                  <td>
-                  <% if garage.friday == true %> X
-                  <%end%>
-                  </td>
-                  <td>
-                  <% if garage.saturday == true %> X
-                  <%end%></td>
-                  <td style=" ">
-                  <% if garage.sunday == true %> X
-                  <%end%></td>
-                </tr>
+          
               </tbody>
 
             </table>
         </p>
         <h5 class="card-title;" style="color: red"> 
-          <% if garage.user %> 
-             <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary"><%= garage.user.first_name %> <%= garage.user.last_name.chars.first %>.</a>  
+          <% if garage.id %> 
+             <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary">Rental info.</a>  
           <% else %> 
               <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-primary">Rent</a>  
           <% end %>

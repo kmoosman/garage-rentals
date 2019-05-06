@@ -6,10 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'pry'
 
 event = Event.create(event_name: "First Event #1", date: "01/01/2019", location: "Austin, TX", created_at: nil, updated_at: nil)
 user = User.create(first_name: "Katie", last_name: "Moosman", email: "moosman.katie@gmail.com", username: "kmoosman", password_digest: nil)
-Garage.create(garage_number: "1", friday: false, saturday: true, sunday: false, created_at: nil, updated_at: nil, event: event, user: user)
+for i in 1..10 do
+    Garage.create(garage_number: "#{i}", venue: "Utah Motorsport Campus")
+end
+binding.pry
 
 
 

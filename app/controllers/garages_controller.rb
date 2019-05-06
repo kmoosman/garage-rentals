@@ -10,8 +10,7 @@ class GaragesController < ApplicationController
     end
 
     def index
-        event_id = params[:event_id]
-        @garages = Garage.all.list_garages(event_id)
+        @garages = Garage.all
     end
 
 end
