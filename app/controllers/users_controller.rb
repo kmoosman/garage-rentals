@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     def new 
+        binding.pry
         @user = User.new
     end
 
@@ -15,10 +16,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        User.create(user_params)
+        @user = User.create(user_params)
         session[:user_id] = User.last.id
         binding.pry
-        redirect_to events_path
+        if @user.valid?
+            redirect_to events_path
+        end
+        render 'new'
+        
     end
 
     private
