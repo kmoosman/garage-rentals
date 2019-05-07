@@ -19,7 +19,7 @@
    <ul>
     <% Rental.rental_days.each do |day| %>
       <li>
-        <%= check_box_tag 'rental_day[]', day -%>
+        <%= check_box_tag 'rental_days[]', day -%>
         <%= h day -%>
       </li>
   <% end %>
