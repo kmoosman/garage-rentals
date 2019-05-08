@@ -5,13 +5,19 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def signin(error = nil)
+        @error = error
+
+    end
+
     def login
-        user = User.find_by(username: params[:username])
-        if user
-          session[:user_id] = user.id
-          redirect_to user_path(user)
-        else
-          redirect_to signin_path
+        @user = User.find_by(username: params[:user][:username])
+        if @user && @user.authenticate(params[:user][:password])
+          session[:user_id] = @user.id
+          redirect_to events_path(@user)
+          else
+        #   @error = 'Username or password was incorrect'
+          redirect_to signin_path, :danger => "Incorrect username or password"
         end
     end
 
@@ -25,6 +31,11 @@ class UsersController < ApplicationController
         render 'new'
         
     end
+
+    def logout
+        session[:user_id] = nil 
+        redirect_to root_path
+      end
 
     private
 

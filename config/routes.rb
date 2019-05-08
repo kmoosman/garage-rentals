@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'users#new'
   # get 'events/:id/garages' => 'garages#index'
   post '/login' => 'users#login', as: :login
+  get '/signin' => 'users#signin', as: :signin
+  get '/logout' => 'users#logout', as: :logout
+  # get '/login' => 'users#login', as: :login
   get 'events/:id/garages/:id/rent' => 'rentals#new'
   # get '/events/new' => 'events#new'
   # get '/events' => 'events#index'
