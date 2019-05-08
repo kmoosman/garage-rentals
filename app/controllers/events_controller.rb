@@ -20,6 +20,12 @@ class EventsController < ApplicationController
 
     def index
         @events = Event.all
+        
+    end
+
+    def select 
+        event = Event.find(params[:event_id])
+        redirect_to "/events/#{event.id}/garages"
     end
 
     private 

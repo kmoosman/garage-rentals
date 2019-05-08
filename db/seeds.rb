@@ -9,6 +9,7 @@
 require 'pry'
 
 event = Event.create(event_name: "First Event #1", date: "01/01/2019", location: "Austin, TX", created_at: nil, updated_at: nil)
+Event.create(event_name: "First Event #2", date: "01/03/2019", location: "Austin, TX", created_at: nil, updated_at: nil)
 user = User.create(first_name: "Katie", last_name: "Moosman", email: "moosman.katie@gmail.com", username: "kmoosman", password_digest: nil)
 for i in 1..10 do
     Garage.create(garage_number: "#{i}", venue: "Utah Motorsport Campus")
