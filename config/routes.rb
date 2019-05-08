@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'events/:id/garages/:id/rent' => 'rentals#new'
   # get '/events/new' => 'events#new'
   # get '/events' => 'events#index'
+
+  get 'auth/:provider/callback', to: 'users#auth'
+  get 'auth/failure', to: redirect('/')
+
   resources :events do 
     resources :garages do 
       resources :rentals
