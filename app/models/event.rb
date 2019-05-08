@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
-    has_many :garages 
+    belongs_to :venue
+    has_many :garages, through: :venue
     has_many :users, through: :rentals
 end
