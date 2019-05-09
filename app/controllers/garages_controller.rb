@@ -10,7 +10,12 @@ class GaragesController < ApplicationController
     end
 
     def index
-        @garages = Garage.all
+        binding.pry
+        event = Event.find(params[:event_id])
+        venue = Venue.find(event.venue_id)
+        garages = Garage.all
+        @garages = venue.garages.list_garages(venue.id)
+        # @garages = event.Garage.all
     end
 
 end
