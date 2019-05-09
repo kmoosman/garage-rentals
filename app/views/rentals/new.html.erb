@@ -13,15 +13,15 @@
     
     <card class="form">
 
- 
-
    <%= form_tag("rentals", method: "post") do %>
    <ul>
     <% Rental.rental_days.each do |day| %>
       <li>
-        <%= check_box_tag 'rental_days[]', day -%>
+      <% if !@rentals.any?{|b| b.rental_day == day } %>
+        <%= check_box_tag 'rental_days[]', day, @rentals.any?{|b| b.rental_day == day } %>
         <%= h day -%>
-      </li>
+      <% end %>
+      </li> 
   <% end %>
 </ul>
    

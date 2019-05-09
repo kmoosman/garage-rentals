@@ -3,9 +3,13 @@ class RentalsController < ApplicationController
 
 
     def new
-        binding.pry
-        @garage = Garage.find(params[:garage_id])
         @event = Event.find(params[:event_id])
+        @garage = Garage.find(params[:garage_id])
+        event_rentals = Rental.all.event_rentals(@event)
+        @rentals = event_rentals.list_rentals(@garage)
+        
+        
+       
         # @rental = Rental.find(params[:id])
     end
 

@@ -3,6 +3,7 @@ class Rental < ApplicationRecord
     belongs_to :user
     belongs_to :garage, optional: true 
     scope :event_rentals, -> (event) { where(event_id: event.venue_id) }
+    scope :list_rentals, -> (garage) { where(garage_id: garage.id) }
     scope :has_rental, -> (garage, day) { where(garage_id: garage.id, rental_day: day) }
     scope :has_available_garages, -> (garage) { where(garage_id: garage.id) }
 
