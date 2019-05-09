@@ -3,10 +3,14 @@
         <p class="card-text">  
           <table style="width: 100%; margin-top: 10px"> 
             <thead>
-                 <tr style="display: flex; width: 200px; justify-content: space-around;">
-                  <th><strong>Fri</strong></td>
-                  <th><strong>Sat</strong></td>
-                  <th><strong>Sun</strong></td>
+             
+                 <tr> <td><strong>Fri:</strong> 
+                 <% if @rentals.is_rented(garage).count > 0 %>
+                 <%= @rentals.is_rented(garage).first.user.first_name %> <%= @rentals.is_rented(garage).first.user.last_name.chars.first %>.
+                 <% end %>
+                 </td> </tr>
+                 <tr> <td><strong>Sat:</strong></td> </tr>
+                 <tr> <td><strong>Sun:</strong></td> </tr>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +31,3 @@
       </div>  
 </div>
 
- 
-
-  
