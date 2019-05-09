@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/logout' => 'users#logout', as: :logout
   # get '/login' => 'users#login', as: :login
   get 'events/:id/garages/:id/rent' => 'rentals#new'
+  post 'events/:id/garages/:id/rentals/new' => 'rentals#create'
   get 'events/select' => 'events#select'
   # get '/events/new' => 'events#new'
   # get '/events' => 'events#index'

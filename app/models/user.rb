@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :garages, through: :rentals
     has_secure_password
     validates_uniqueness_of :username
+    
 
     def self.from_omniauth(auth)
         # Creates a new user only if it doesn't exist

@@ -14,11 +14,15 @@ class RentalsController < ApplicationController
     end
 
     def create
+        
         event = params[:event_id]
-        garage = params[:garage_id]
+        garage = params[:id]
+        
         for day in params[:rental_days] do 
-            Rental.create(rental_day: day, garage_id: garage, event_id: event)
+            Rental.create(rental_day: day, garage_id: garage, event_id: params[:event_id], user_id: "1")
         end
+
+        
         redirect_to event_garages_path
     end
 

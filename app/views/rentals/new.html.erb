@@ -13,7 +13,8 @@
     
     <card class="form">
 
-   <%= form_tag("rentals", method: "post") do %>
+   <%= form_tag("", method: "post") do %>
+   <%= hidden_field_tag :event_id, @event.id %>
    <ul>
     <% Rental.rental_days.each do |day| %>
       <li>
