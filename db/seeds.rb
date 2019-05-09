@@ -14,6 +14,7 @@ Event.create(event_name: "First Event #2", date: "12/01/2019", venue_id: venue.i
 user = User.create(first_name: "Katie", last_name: "Moosman", email: "moosman.katie@gmail.com", username: "kmoosman", password: "1234")
 Rental.create(event_id: "1", garage_id: 1, user_id: user.id, rental_day: "Friday")
 Rental.create(event_id: "1", garage_id: 1, user_id: user.id, rental_day: "Saturday")
+Rental.create(event_id: "1", garage_id: 1, user_id: user.id, rental_day: "Sunday")
 Rental.create(event_id: "1", garage_id: 3, user_id: user.id, rental_day: "Saturday")
 Rental.create(event_id: "2", garage_id: 3, user_id: user.id, rental_day: "Saturday")
 

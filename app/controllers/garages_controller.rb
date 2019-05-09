@@ -2,6 +2,7 @@ require 'pry'
 class GaragesController < ApplicationController
 
     def rent
+        binding.pry
         @garage = Garage.find(params[:id])
     end
 

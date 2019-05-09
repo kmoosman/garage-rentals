@@ -5,12 +5,19 @@
             <thead>
              
                  <tr> <td><strong>Fri:</strong> 
-                 <% if @rentals.is_rented(garage).count > 0 %>
-                 <%= @rentals.is_rented(garage).first.user.first_name %> <%= @rentals.is_rented(garage).first.user.last_name.chars.first %>.
+                 <% if @rentals.has_rental(garage, "Friday").count > 0 %>
+                  <%= @rentals.has_rental(garage, "Friday").first.user.first_name %> <%= @rentals.has_rental(garage, "Friday").first.user.last_name.chars.first %>.
                  <% end %>
                  </td> </tr>
-                 <tr> <td><strong>Sat:</strong></td> </tr>
-                 <tr> <td><strong>Sun:</strong></td> </tr>
+                 <tr> <td><strong>Sat:</strong>
+                 <% if @rentals.has_rental(garage, "Saturday").count > 0 %>
+                  <%= @rentals.has_rental(garage, "Saturday").first.user.first_name %> <%= @rentals.has_rental(garage, "Saturday").first.user.last_name.chars.first %>.
+                 <% end %>
+                 </td> </tr>
+                 <tr> <td><strong>Sun:</strong>
+                 <% if @rentals.has_rental(garage, "Sunday").count > 0 %>
+                  <%= @rentals.has_rental(garage, "Sunday").first.user.first_name %> <%= @rentals.has_rental(garage, "Sunday").first.user.last_name.chars.first %>.
+                 <% end %></td> </tr>
                 </tr>
             </thead>
             <tbody>
@@ -21,10 +28,14 @@
             </table>
         </p>
         <h5 class="card-title;" style="color: red"> 
-          <% if garage.id %> 
-             <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary">Rental info.</a>  
+          <% if @rentals.has_available_garages(garage).count < 3 %> 
+            <%= link_to  "Rent", new_event_garage_rental_path(garage_id: garage.id), :class => "btn btn-danger", :style => "width: 70%; margin-top: 10px"%>
+             
           <% else %> 
-              <a href="#" style="width: 70%; margin-top: 10px" class="btn btn-primary">Rent</a>  
+          
+          
+          <a href="" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary">Unavailable</a>  
+              
           <% end %>
         </h5>
          

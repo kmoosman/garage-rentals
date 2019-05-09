@@ -3,8 +3,9 @@ class RentalsController < ApplicationController
 
 
     def new
-        @garage = Garage.find(params[:id])
-        @event = Event.find(params[:id])
+        binding.pry
+        @garage = Garage.find(params[:garage_id])
+        @event = Event.find(params[:event_id])
         # @rental = Rental.find(params[:id])
     end
 
