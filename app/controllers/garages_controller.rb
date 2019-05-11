@@ -17,7 +17,6 @@ class GaragesController < ApplicationController
         @garages = garages.list_garages(event)
         rentals = Rental.all
         @rentals = rentals.event_rentals(event)
-        binding.pry
     end
 
     private
