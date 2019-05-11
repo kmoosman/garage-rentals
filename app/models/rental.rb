@@ -2,6 +2,7 @@ class Rental < ApplicationRecord
     belongs_to :event, optional: true 
     belongs_to :user
     belongs_to :garage, optional: true 
+    validates :rental_day, uniqueness: { scope: [:event_id, :garage] }
     scope :event_rentals, -> (event) { where(event_id: event.id) }
     scope :list_rentals, -> (garage) { where(garage_id: garage.id) }
     scope :has_rental, -> (garage, day) { where(garage_id: garage.id, rental_day: day) }

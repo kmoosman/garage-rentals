@@ -13,6 +13,7 @@ class GaragesController < ApplicationController
     def index
         event = Event.find(params[:event_id])
         garages = Garage.all
+        @user_id = session[:user_id]
         @garages = garages.list_garages(event)
         rentals = Rental.all
         @rentals = rentals.event_rentals(event)

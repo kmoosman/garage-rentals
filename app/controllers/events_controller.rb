@@ -1,5 +1,6 @@
 require 'pry'
 class EventsController < ApplicationController
+    before_action :require_login
 
     def rent
         @event = Event.find(params[:id])
@@ -33,6 +34,10 @@ class EventsController < ApplicationController
     def event_params
         params.require(:event).permit(:event_name, :location,
                                           :date,)
+    end
+
+    def require_login
+        return redirect_to signin_path unless logged_in?
     end
 
 end

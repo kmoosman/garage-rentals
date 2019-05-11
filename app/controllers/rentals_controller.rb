@@ -9,20 +9,17 @@ class RentalsController < ApplicationController
         event_rentals = Rental.all.event_rentals(@event)
         @rentals = event_rentals.list_rentals(@garage)
         
-        
        
         # @rental = Rental.find(params[:id])
     end
 
     def create
-        binding.pry
         event = params[:event_id]
         garage = params[:id]
         
         for day in params[:rental_days] do 
             Rental.create(rental_day: day, garage_id: garage, event_id: params[:event_id], user_id: session[:user_id])
         end
-        binding.pry
 
         redirect_to "/events/#{event}/garages"
     end
@@ -42,7 +39,7 @@ class RentalsController < ApplicationController
     end
 
     def rental_params
-        params.require(:user).permit(:first_name, :last_name, :email,
-                                    :username, :password)                       
+        params.require(:user).permit(:rental_day, :garage_id, :event_id,
+                                    :user_id)                       
     end
 end
