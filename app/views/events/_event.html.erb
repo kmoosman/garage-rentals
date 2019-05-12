@@ -1,16 +1,17 @@
-
-<%= form_for(event) do |f| %>
-  <div class='field'>
-    <%= f.label :event_name, "Event Name" %><br />
-    <%= f.text_field :event_name %>
-  </div>
-  <div class='field'>
-    <%= f.label :date, "Date" %><br />
-    <%= f.text_field :date %>
-  </div>
-  <div class='field'>
-    <%= f.label :location, "Location" %><br />
-    <%= f.text_field :location %>
-  </div>
-  <%= f.submit button_label %>
-<% end %>
+<card class="form">
+  <%= form_for(event) do |f| %>
+    <div class='field'>
+      <%= f.label :event_name, "Event Name" %><br />
+      <%= f.text_field :event_name %>
+    </div>
+    <div class='field'>
+      <%= f.label :date, "Date" %><br />
+      <%= f.text_field :date %>
+    </div>
+    <div class='field'>
+      <%= f.label :location, "Location" %><br />
+      <%= f.text_field :location %>
+    </div>
+    <%= f.submit button_label %>
+  <% end %>
+</card>

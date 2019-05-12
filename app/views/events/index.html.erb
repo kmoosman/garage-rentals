@@ -1,12 +1,15 @@
-<h1 style="text-align: center; margin-top: 20px">Select an event</h1>
+<h1 class="header">Select Event</h1>
 <hr/>
-
-
-  <form action="/events/select" method="get">
-    <div style="display: flex;  align-items: center; background-color: lightgray;justify-content: center; margin: 0px 100px 0px 100px; border: 1px solid gray; height: 300px"><%= select_tag "event_id", options_from_collection_for_select(@events, "id", "event_name") %><div>
-    <!-- other inputs here -->
-    <input type="submit" value="Submit This Form">
-  </form>
+<div class="center_me">
+  <card class="form">
+    <form action="/events/select" method="get">
+      <section><%= select_tag "event_id", options_from_collection_for_select(@events, "id", "event_name"), :style => "width: 400px" %> </section>
+      <section class="add_margin center_me">
+        <input type="submit" value="Continue" class="btn btn-danger">
+      </section>
+    </form>
+  </card>
+</div>
 
 
   

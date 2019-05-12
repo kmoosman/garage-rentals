@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#welcome'
-  # get 'events/:id/garages' => 'garages#index'
-  post '/login' => 'users#login', as: :login
+  
   get '/signin' => 'users#signin', as: :signin
+  post '/login' => 'users#login', as: :login
   get '/logout' => 'users#logout', as: :logout
   get '/signup' => 'users#new', as: :new
-  # get '/login' => 'users#login', as: :login
   get 'events/:id/garages/:id/rent' => 'rentals#new'
   post 'events/:id/garages/:id/rentals/new' => 'rentals#create'
   get 'events/select' => 'events#select'
-  # get '/events/new' => 'events#new'
-  # get '/events' => 'events#index'
 
   get 'auth/:provider/callback', to: 'users#auth'
   get 'auth/failure', to: redirect('/')
