@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/login' => 'users#login', as: :login
   get '/signin' => 'users#signin', as: :signin
   get '/logout' => 'users#logout', as: :logout
+  get '/signup' => 'users#new', as: :new
   # get '/login' => 'users#login', as: :login
   get 'events/:id/garages/:id/rent' => 'rentals#new'
   post 'events/:id/garages/:id/rentals/new' => 'rentals#create'

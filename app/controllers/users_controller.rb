@@ -5,11 +5,10 @@ class UsersController < ApplicationController
     end
 
     def welcome
-    
+        render './welcome'
     end 
 
-    def show
-    end
+   
 
     def signin(error = nil)
         @error = error

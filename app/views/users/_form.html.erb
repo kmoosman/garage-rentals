@@ -1,5 +1,3 @@
-<div style="text-align: center; "> 
-
 <% if @user.errors.any? %>
   <div id="error_explanation">
 
@@ -11,24 +9,29 @@
     </ul>
   </div>
 <% end %>
+
+<div class="center_me">
+<card class="form">
   <%= form_for(user) do |f| %>
-    <div class='field' style="margin: 5px; padding 5px">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </div>
-    <div class='field' style="margin: 5px; padding 5px">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </div>
-    </br>
-    <div class='field' style="margin: 5px; padding 5px">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-    </div>
-    <div class='field' style="margin: 5px; padding 5px">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <%= f.submit button_label %>
+    <section class="add_margin">
+      <%= f.label :first_name, :class => "block"  %>
+      <%= f.text_field :first_name, :class => "block"  %>
+    </section>
+    <section class="add_margin">
+      <%= f.label :last_name, :class => "block"  %>
+      <%= f.text_field :last_name, :class => "block"  %>
+    </section>
+    <section class="add_margin">
+      <%= f.label :username, :class => "block"  %>
+      <%= f.text_field :username, :class => "block"  %>
+    </section>
+    <section class="add_margin">
+      <%= f.label :password, :class => "block"  %>
+      <%= f.password_field :password, :class => "block"  %>
+    </section>
+    <section class="add_margin center_me">
+       <%= f.submit button_label, :class => "btn btn-danger"  %>
+    </section>
   <% end %>
-</div> 
+  </card>
+</div>
