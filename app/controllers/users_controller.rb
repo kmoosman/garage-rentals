@@ -4,6 +4,13 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def welcome
+    
+    end 
+
+    def show
+    end
+
     def signin(error = nil)
         @error = error
     end

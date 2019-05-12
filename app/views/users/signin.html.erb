@@ -1,20 +1,33 @@
-<%= form_for :user, url: login_path  do |f| %>
-<% flash.each do |name, msg| %>
-  <div class='alert alert-<%= name %>'>
-    <%= msg %>
-  </div>
+<div class="header"> 
+<h1> Login </h1>
+<div>
+  <%= form_for :user, url: login_path  do |f| %>
+  <% flash.each do |name, msg| %>
+    <div class='alert alert-<%= name %>'>
+      <%= msg %>
+    </div>
 
-<%end%>
-  <div class='field'>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+  <%end%>
+<div class="center_me">
+  <card class="form">
+    <section> 
+      <div class='field'>
+        <%= f.label :username, :class => "block" %>
+        <%= f.text_field :username, :class => "block" %> 
+    </section>
+    <section class="block"> 
+        <%= f.label :password, :class => "block" %>
+        <%= f.password_field :password, :class => "block" %>
+    </section>
+    </div>
+      <div class='field block'>
+        <%= f.submit "Sign In", :class => "btn btn-danger" %>
+      </div>
+    <% end %>
+  </card>
   </div>
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+  <section class="block add_margin"> 
+  <a href="/auth/google_oauth2"><img width="200px" src="/images/btn_google_signin_dark_focus_web@2x.png" title="Login w/Google" alt="Login w/Google"></a>
+  </section>
   </div>
-  <div class='field'>
-    <%= f.submit "Sign In" %>
-  </div>
-<% end %>
-<a href='/auth/google_oauth2'>Login with Google</a>
+</div>
