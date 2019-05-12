@@ -1,33 +1,35 @@
-<h1 class="header" style="text-align: center; margin: 10px"> Garage Rental</h1>
+<div class="header">
+    <h1 class="header">Garage GP <%= @garage.garage_number %> </h1>
+    <p class="quote"> Event: <%= @event.event_name %></p>
+    <p class="quote" style="margin-top: -15px"> Date:  <%= @event.date %></p>
+</div>
 <hr/>
-<h2 style="color: blue; text-align: center;"> GP <%= @garage.garage_number %>  </h2> 
-<div class="center_me" style="text-align: center">
-        <section> 
-            <span> Event: </span>
-            <span> <%= @event.event_name %></span>
-        </section>
-         <section> 
-            <span> Date: </span>
-            <span> <%= @event.date %></span>
-        </section>
-    
+<div class="center_me">
     <card class="form">
 
    <%= form_tag("", method: "post") do %>
    <%= hidden_field_tag :event_id, @event.id %>
 
-   <ul>
+   <h4>Days Available</h4>
+   </br> 
+   
     <% Rental.rental_days.each do |day| %>
-      <li>
+      <span style="padding: 10px; font-size: 20px">
       <% if !@rentals.any?{|b| b.rental_day == day } %>
         <%= check_box_tag 'rental_days[]', day, @rentals.any?{|b| b.rental_day == day } %>
         <%= h day -%>
       <% end %>
-      </li> 
+      </span> 
   <% end %>
-</ul>
-   
-    <%= submit_tag("Rent") %>
+  
+      
+ 
+  </br>
+  </br>
+
+   <p class="center_me add_margin">
+        <%= submit_tag("Rent", :class=>"center_me btn btn-danger", :style => "width: 100%")%>
+   </p>
   <% end %>
  
     
