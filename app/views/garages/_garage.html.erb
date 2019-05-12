@@ -1,44 +1,42 @@
-<div class="card" style="width: 200px; margin: 20px; text-align: center">
-    <h5 class="card-header" style="text-align: center; color: blue;">GP <%= garage.garage_number %></h5>
-        <p class="card-text">  
-          <table style="width: 100%; margin-top: 10px"> 
-            <thead>
-             
-                 <tr> <td><strong>Fri:</strong> 
-                 <% if @rentals.has_rental(garage, "Friday").count > 0 %>
-                  <%= @rentals.has_rental(garage, "Friday").first.user.first_name %> <%= @rentals.has_rental(garage, "Friday").first.user.last_name.chars.first %>.
-                 <% end %>
-                 </td> </tr>
-                 <tr> <td><strong>Sat:</strong>
-                 <% if @rentals.has_rental(garage, "Saturday").count > 0 %>
-                  <%= @rentals.has_rental(garage, "Saturday").first.user.first_name %> <%= @rentals.has_rental(garage, "Saturday").first.user.last_name.chars.first %>.
-                 <% end %>
-                 </td> </tr>
-                 <tr> <td><strong>Sun:</strong>
-                 <% if @rentals.has_rental(garage, "Sunday").count > 0 %>
-                  <%= @rentals.has_rental(garage, "Sunday").first.user.first_name %> <%= @rentals.has_rental(garage, "Sunday").first.user.last_name.chars.first %>.
-                 <% end %></td> </tr>
-                </tr>
-            </thead>
-            <tbody>
 
-          
-              </tbody>
-
-            </table>
-        </p>
-        <h5 class="card-title;" style="color: red"> 
-          <% if @rentals.has_available_garages(garage).count < 3 %> 
-            <%= link_to  "Rent", new_event_garage_rental_path(garage_id: garage.id), :class => "btn btn-danger", :style => "width: 70%; margin-top: 10px"%>
-             
-          <% else %> 
-          
-          
-          <a href="" style="width: 70%; margin-top: 10px" class="btn btn-outline-secondary">Unavailable</a>  
+  <card class="form" style="width: 250px; border: 3px gray solid">
+      <h5 class="card-header center_me" style=" color: blue;">GP <%= garage.garage_number %></h5>
+          <p class="card-text">  
+            <table style="width: 100%; margin-top: 10px"> 
+              <thead>
               
-          <% end %>
-        </h5>
-         
-      </div>  
-</div>
+                  <tr> <td><strong>Fri:</strong> 
+                  <% if @rentals.has_rental(garage, "Friday").count > 0 %>
+                    <%= @rentals.has_rental(garage, "Friday").first.user.first_name %> <%= @rentals.has_rental(garage, "Friday").first.user.last_name.chars.first %>.
+                  <% end %>
+                  </td> </tr>
+                  <tr> <td><strong>Sat:</strong>
+                  <% if @rentals.has_rental(garage, "Saturday").count > 0 %>
+                    <%= @rentals.has_rental(garage, "Saturday").first.user.first_name %> <%= @rentals.has_rental(garage, "Saturday").first.user.last_name.chars.first %>.
+                  <% end %>
+                  </td> </tr>
+                  <tr> <td><strong>Sun:</strong>
+                  <% if @rentals.has_rental(garage, "Sunday").count > 0 %>
+                    <%= @rentals.has_rental(garage, "Sunday").first.user.first_name %> <%= @rentals.has_rental(garage, "Sunday").first.user.last_name.chars.first %>.
+                  <% end %></td> </tr>
+                  </tr>
+              </thead>
+              <tbody>
 
+            
+                </tbody>
+
+              </table>
+          </p>
+          <section class="center_me">
+            <% if @rentals.has_available_garages(garage).count < 3 %> 
+              <%= link_to  "Rent", new_event_garage_rental_path(garage_id: garage.id), :class => "btn btn-danger center_me", :style => "width: 80%"%>
+              
+            <% else %>
+            <a href="" class="btn btn-outline-secondary center_me">Unavailable</a>  
+            <% end %>
+          </section>
+          
+        </div>  
+  </card>
+  
