@@ -8,7 +8,9 @@ class UsersController < ApplicationController
         render './welcome'
     end 
 
-   
+    def show
+    end
+
 
     def signin(error = nil)
         @error = error
@@ -32,7 +34,6 @@ class UsersController < ApplicationController
         if @user.valid?
             redirect_to events_path
         end
-        render 'new'
         
     end
 
