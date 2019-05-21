@@ -1,24 +1,7 @@
 # README
+# About
+Garage Rentals is an web app that allows you to rent garages for an event at different venues/race tracks.  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Installation 
+Simply clone this repo to run locally on your machine. Be sure to run db:migrate and db:seed after cloning to setup the database and see the program with a few events to start with.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
