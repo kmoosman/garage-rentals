@@ -4,26 +4,11 @@
           <p class="card-text">  
             <table style="width: 100%; margin-top: 10px"> 
               <thead>
-              
-                  <tr> <td><strong>Fri:</strong> 
-                  <% if @rentals.has_rental(garage, "Friday").count > 0 %>
-                    <%= @rentals.has_rental(garage, "Friday").first.user.first_name %> <%= @rentals.has_rental(garage, "Friday").first.user.last_name.chars.first %>.
-                  <% end %>
-                  </td> </tr>
-                  <tr> <td><strong>Sat:</strong>
-                  <% if @rentals.has_rental(garage, "Saturday").count > 0 %>
-                    <%= @rentals.has_rental(garage, "Saturday").first.user.first_name %> <%= @rentals.has_rental(garage, "Saturday").first.user.last_name.chars.first %>.
-                  <% end %>
-                  </td> </tr>
-                  <tr> <td><strong>Sun:</strong>
-                  <% if @rentals.has_rental(garage, "Sunday").count > 0 %>
-                    <%= @rentals.has_rental(garage, "Sunday").first.user.first_name %> <%= @rentals.has_rental(garage, "Sunday").first.user.last_name.chars.first %>.
-                  <% end %></td> </tr>
-                  </tr>
+                  <%= display_rental(garage,"Friday") %>
+                  <%= display_rental(garage,"Saturday") %>
+                  <%= display_rental(garage,"Sunday") %>
               </thead>
               <tbody>
-
-            
                 </tbody>
 
               </table>

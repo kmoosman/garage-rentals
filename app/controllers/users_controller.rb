@@ -28,13 +28,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        @user = User.new(user_params)
         session[:user_id] = User.last.id
-        binding.pry
-        if @user.valid?
+        if @user.save
             redirect_to events_path
+        else 
+            render :new
         end
-        
     end
 
     def auth

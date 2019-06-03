@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       resources :rentals
     end
   end
+
+  # get rid of if else in the vie w/helper methods 
+  # get rid of tripple nesting
+  # shallow nesting
   
   resources :users, only: [:new, :show, :create, :edit, :update]
   

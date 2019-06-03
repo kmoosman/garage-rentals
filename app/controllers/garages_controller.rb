@@ -6,9 +6,9 @@ class GaragesController < ApplicationController
         @garage = Garage.find(params[:id])
     end
 
-    def show
-        @garage = Garage.first
-    end
+    # def show
+    #     @garage = Garage.first
+    # end
 
     def index
         event = Event.find(params[:event_id])
