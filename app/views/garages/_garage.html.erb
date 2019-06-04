@@ -9,16 +9,17 @@
                   <%= display_rental(garage,"Sunday") %>
               </thead>
               <tbody>
+
                 </tbody>
 
               </table>
           </p>
           <section class="center_me">
             <% if @rentals.has_available_garages(garage).count < 3 %> 
-              <%= link_to  "Rent", new_event_garage_rental_path(garage_id: garage.id), :class => "btn btn-danger center_me", :style => "width: 80%"%>
+              <%= link_to  "Rent", new_event_garage_path(garage_id: garage.id), :class => "btn btn-danger center_me", :style => "width: 80%"%>
               
             <% else %>
-            <a href="" class="btn btn-outline-secondary center_me">Unavailable</a>  
+              <a href="" class="btn btn-outline-secondary center_me">Unavailable</a>  
             <% end %>
           </section>
           

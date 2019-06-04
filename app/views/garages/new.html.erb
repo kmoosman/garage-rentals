@@ -12,7 +12,6 @@
 
    <h4>Days Available</h4>
    </br> 
-   
     <% Rental.rental_days.each do |day| %>
       <span style="padding: 10px; font-size: 20px">
       <% if !@rentals.any?{|b| b.rental_day == day } %>
@@ -21,9 +20,6 @@
       <% end %>
       </span> 
   <% end %>
-  
-      
- 
   </br>
   </br>
 

@@ -6,17 +6,21 @@ Rails.application.routes.draw do
   post '/login' => 'users#login', as: :login
   get '/logout' => 'users#logout', as: :logout
   get '/signup' => 'users#new', as: :new
+  post 'events/:id/garages/new' => 'garages#create'
   get 'events/:id/garages/:id/rent' => 'rentals#new'
   post 'events/:id/garages/:id/rentals/new' => 'rentals#create'
   get 'events/select' => 'events#select'
+  get 'events/select' => 'events#select'
+  
+  
 
   get 'auth/:provider/callback', to: 'users#auth'
   get 'auth/failure', to: redirect('/')
 
   resources :events do 
-    resources :garages do 
-      resources :rentals
-    end
+    resources :garages 
+      # resources :rentals
+    
   end
 
   # get rid of if else in the vie w/helper methods 
