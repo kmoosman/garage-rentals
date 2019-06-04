@@ -1,0 +1,20 @@
+<h1 class="header">Create a new venue</h1>
+<hr/> 
+
+<card class="form">
+  <%= form_for(@venue) do |f| %>
+    <div class='field'>
+      <%= f.label :name, "Venue Name" %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class='field'>
+      <%= f.label :city, "City" %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div class='field'>
+      <%= f.label :state, "State" %><br />
+      <%= f.text_field :state %>
+    </div>
+    <%= f.submit "Create Venue" %>
+  <% end %>
+</card>
