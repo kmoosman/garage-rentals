@@ -104,3 +104,8 @@ body {
   .add_margin {
       margin-top: 10px
   }
+
+  .venues_list {
+      text-align: center;
+      margin: 20px;
+  }
