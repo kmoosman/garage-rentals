@@ -13,10 +13,9 @@ $(document).ready(function() {
     }
   }
 
-  $.get(`/api/venues`, function(data, status){
+  $.get(`/venues.json`, function(data, status){
     data.forEach(element => {
       var venue = new Venue(element.name, element.city, element.state)
-      console.log(element.name)
       $(".venues_list").append(venue.html);
     });
    

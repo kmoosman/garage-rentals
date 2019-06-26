@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   post 'events/:id/garages/:id/rentals/new' => 'rentals#create'
   get 'events/select' => 'events#select'
   get 'events/select' => 'events#select'
-  get '/venues' => 'venues#show', as: :show
+  # get '/venues' => 'venues#show', as: :show
+  # get '/venues' => 'venues#index', as: :index
+  get '/venues' => 'venues#index', as: :index
+
   
   
   
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
       # resources :rentals
   end
 
-  resources :venues,  only: [:new, :show, :create]
+  resources :venues,  only: [:new, :show, :create, :index]
 
   # get rid of if else in the vie w/helper methods 
   # get rid of tripple nesting

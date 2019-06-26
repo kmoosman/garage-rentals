@@ -12,8 +12,18 @@ class VenuesController < ApplicationController
 
     def show
         @venue = Venue.find(params[:id])
+
     end
 
+
+    def index
+        @venues = Venue.all
+        respond_to do |format|
+            format.html 
+            format.json {render json: @venues}
+        end
+        # render json: @venues
+    end
 
     private 
 
