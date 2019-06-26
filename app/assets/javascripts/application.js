@@ -22,4 +22,5 @@
 //= require bootstrap
 //= require_tree
 //= require venues.js
+//= require venue.js
 
