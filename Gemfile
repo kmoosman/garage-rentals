@@ -33,6 +33,7 @@ gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-google'
 gem 'handlebars_assets'
+gem 'active_model_serializers'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
