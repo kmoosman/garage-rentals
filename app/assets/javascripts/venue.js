@@ -32,4 +32,26 @@ $(document).ready(function() {
         $(".venue_details").append(venue.header);
         venue.generateCards()
       })
+    
+ 
+
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      console.log("submitted")
+ 
+      var values = $(this).serialize();
+ 
+      var posting = $.post('/venues', values);
+ 
+      posting.done(function(data) {
+        var venue = data;
+        $("#postTitle").text(venue["name"]);
+        $("#postBody").text(venue["date"]);
+      });
+    });
+  });
+
+      
   })

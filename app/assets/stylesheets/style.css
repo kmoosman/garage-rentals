@@ -109,3 +109,11 @@ body {
       text-align: center;
       margin: 20px;
   }
+
+  .left_header {
+      margin-left: 2%;
+      margin-bottom: -20px;
+      color: #EA3474;
+      font-family: 'Indie Flower';
+
+  }

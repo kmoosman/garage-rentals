@@ -6,8 +6,9 @@ class VenuesController < ApplicationController
     end 
 
     def create
-        venue = Venue.create(venue_params)
-        redirect_to "/venues/#{venue.id}"
+        @venue = Venue.create(venue_params)
+        # redirect_to "/venues/#{venue.id}"
+        render json: @venue, status: 201
     end
 
     def show
@@ -21,6 +22,7 @@ class VenuesController < ApplicationController
 
     def index
         @venues = Venue.all
+        @venue = Venue.new()
         respond_to do |format|
             format.html 
             format.json {render json: @venues}

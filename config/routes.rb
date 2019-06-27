@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # get '/venues' => 'venues#show', as: :show
   # get '/venues' => 'venues#index', as: :index
   get '/venues' => 'venues#index', as: :index
+  post '/venues' => 'venues#create' 
 
   
   
