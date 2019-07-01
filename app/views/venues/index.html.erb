@@ -1,7 +1,12 @@
 <h1 class="header">Venues</h1>
 <hr>
 <div class="header" style="margin-top: -20px"><%= render @venue %></div>
-<a id="texas" href="http://localhost:3000/venues/" class="btn btn-primary" style="margin: -20px">Show Texas Events</a>
+<div class="filters">
+    <a id="texas" href="http://localhost:3000/venues/" class="btn btn-outline-info" style="margin: -20px">Texas Events</a>
+    <a id="utah" href="http://localhost:3000/venues/" class="btn btn-outline-info" style="margin: -20px">Utah Events</a>
+    <a id="cali" href="http://localhost:3000/venues/" class="btn btn-outline-info" style="margin: -20px">Cali Events</a>
+</div> 
+
 <%= javascript_include_tag('venues.js') %>
   <div id="postResult">
   <h2 id="postTitle"></h2>
