@@ -1,11 +1,12 @@
+console.log('Hello from venues.js')
+
 $(document).ready(function() {
   //Object constructor w/prototype function
-  $(function () {
+  // $(function () {
     $('form').submit(function(event) {
       //prevent form from submitting the default way
       event.preventDefault();
       console.log("submitted")
- 
       var values = $(this).serialize();
       var posting = $.post('/venues', values);
  
@@ -15,7 +16,7 @@ $(document).ready(function() {
   
       });
     });
-  });
+  // });
   if($('.card').length) {
     console.log("I've already loaded venues to the dom")
    
@@ -43,5 +44,22 @@ $(document).ready(function() {
     
         })
     
+        $('#texas').click(function(event) {
+          //prevent form from submitting the default way
+          event.preventDefault();
+          console.log("you have clicked on Texas")
+          // var values = $(this).serialize();
+          // var posting = $.post('/venues', values);
+     
+          // posting.done(function(data) {
+          //   var venue = new Venue(data.name, data.city, data.state, data.id)
+          //   $(".venues_list").append(venue.html);
+      
+          // });
+        });
+
+
     }
+
+    
 })

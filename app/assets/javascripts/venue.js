@@ -1,3 +1,4 @@
+console.log('Hello from venue.js')
 $(document).ready(function() {
     //Object constructor w/prototype function
     function Venue(name, city, state, id, events) {
